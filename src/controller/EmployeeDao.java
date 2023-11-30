@@ -37,13 +37,15 @@ public class EmployeeDao implements DaoImp{
 	}
 
 	@Override
-	public int delete(int roll) {
+	public int delete(int id) throws ClassNotFoundException, SQLException {
 		// TODO Auto-generated method stub
 		Connection con=getConnect();
 		Statement st=con.createStatement();
-		String q="delete from emp where id="+id;
+	
+		//String id;
+		String d="delete from emp where id="+id;
 		
-		return st.executeUpdate(q);
+		return st.executeUpdate(d);
 	}
 
 	@Override

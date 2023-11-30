@@ -59,7 +59,6 @@ public class MenuView {
 					
 					System.out.println("not deleted");
 				
-				
 				break;
 				
 			}
