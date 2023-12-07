@@ -1,8 +1,15 @@
 package controller;
 
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
@@ -55,9 +62,22 @@ public class EmployeeDao implements DaoImp{
 	}
 
 	@Override
-	public void show() {
-		// TODO Auto-generated method stub
+	public int show() throws ClassNotFoundException, SQLException {
+		Connection c = getConnect();
+		Statement st = c.createStatement();
+     
+		String q="Select *from emp";
+		 ResultSet rs = st.executeQuery(q);
+		 
+		 while(rs.next())
+		 {
+		 System.out.println(rs.getInt(1)+" "+rs.getString(2)+" "+rs.getString(3));
+		 }
+		return 0;
 		
+		
+	   }
+
 	}
 
-}
+

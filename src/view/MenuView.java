@@ -47,6 +47,7 @@ public class MenuView {
 				
 				
 				break;
+				
 			case 3:
 				System.out.println("Enter Roll : ");
 				id=Integer.parseInt(sc.nextLine());
@@ -59,6 +60,14 @@ public class MenuView {
 					
 					System.out.println("not deleted");
 				
+				break;
+			case 4:
+				a=db.show();
+				if(a>0)
+					System.out.println("data showed");
+				else
+					
+					System.out.println("not showed");
 				break;
 				
 			}
